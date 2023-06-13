@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 
-interface CurrentPrice {
+interface Response {
   time:{
     updated: string
   },
@@ -9,8 +9,8 @@ interface CurrentPrice {
     USD: {
       symbol: string,
       rate_float: number;
-    }
-  }
+    };
+  };
 }
 
 @Component({
@@ -20,10 +20,14 @@ interface CurrentPrice {
 })
 export class RootComponent implements OnInit {
 
+  CurrentPrice = {} as Response;
   constructor(private http: HttpClient) { }
 
   update(){
-
+    let url = "https://api.coindesk.com/v1/bpi/currentprice.json";
+    this.http.get<Response>(url).subscribe((data) => {;
+      this.CurrentPrice = data;
+    });
   }
 
   ngOnInit() {
