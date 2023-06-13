@@ -5,13 +5,10 @@ interface CurrentPrice {
   time:{
     updated: string
   },
-  "bpi":{
-    "USD":{
-      "code":"USD",
-      "symbol":"&#36;",
-      "rate":"25,891.7998",
-      "description":"United States Dollar",
-      "rate_float":25891.7998
+  bpi: {
+    USD: {
+      symbol: string,
+      rate_float: number;
     }
   }
 }
