@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RootComponent } from './root/root.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
+import { BitcoinService } from './bitcoin.service';
 
 @NgModule({
   imports: [
@@ -17,7 +18,7 @@ import { HttpClientModule } from '@angular/common/http';
     RootComponent
   ],
   providers: [
-
+    BitcoinService,
   ],
 })
 export class AppModule { }
